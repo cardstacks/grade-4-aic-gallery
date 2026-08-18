@@ -37,11 +37,11 @@ function render(){
  let a=works.filter(x=>(cat==="all"||x.category===cat)&&((x.title+" "+x.artist).toLowerCase().includes(q)));
  document.getElementById("count").textContent=a.length+" artwork choices";
  document.getElementById("grid").innerHTML=a.map(x=>`<article class="card">
- <img src="images/${x.slot}.jpg" alt="${esc(x.title)}" loading="lazy">
+ <img src="https://www.artic.edu/iiif/2/${x.aic_id}/full/843,/0/default.jpg" alt="${esc(x.title)}" loading="lazy">
  <div class="info"><div class="cat">${esc(x.category)}</div>
  <h2>${esc(x.title)}</h2><p>${esc(x.artist)}</p><p>${esc(x.date)}</p>
  <a href="${esc(x.aic_page)}" target="_blank" rel="noopener">AIC Artwork Record</a>
- <a href="images/${x.slot}.jpg" target="_blank">Open Image</a></div></article>`).join("")
+ <a href="https://www.artic.edu/iiif/2/${x.aic_id}/full/843,/0/default.jpg" target="_blank">Open Image</a></div></article>`).join("")
 }
 document.querySelectorAll(".f").forEach(b=>b.onclick=()=>{
  document.querySelectorAll(".f").forEach(x=>x.classList.remove("active"));
